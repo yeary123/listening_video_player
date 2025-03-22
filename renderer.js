@@ -28,6 +28,9 @@ ipcRenderer.on('selected-file', (event, filePath) => {
   if (filePath) {
     // 设置视频源
     videoPlayer.src = filePath;
+    // 确保音量设置正确
+    videoPlayer.volume = 1.0; // 设置为最大音量
+    videoPlayer.muted = false; // 确保不是静音状态
     // 显示文件路径
     filePathDisplay.textContent = `当前文件: ${filePath}`;
     // 启用播放按钮
