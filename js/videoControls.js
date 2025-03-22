@@ -1,11 +1,16 @@
+// const SubtitleManager = require('./subtitleManager.js')
 // DOM 元素
 const videoPlayer = document.getElementById('video-player');
 const selectFileBtn = document.getElementById('select-file');
 const playPauseBtn = document.getElementById('play-pause');
 const filePathDisplay = document.getElementById('file-path');
+const subSelect = document.getElementById('subtitle-select')
 
 // 从主进程导入 electron 模块
 const { ipcRenderer } = require('electron');
+
+// 初始化字幕模块
+// SubtitleManager.init(videoPlayer, subSelect)
 
 // 选择文件按钮点击事件
 selectFileBtn.addEventListener('click', () => {
@@ -36,6 +41,14 @@ ipcRenderer.on('selected-file', (event, filePath) => {
     // 启用播放按钮
     playPauseBtn.disabled = false;
     playPauseBtn.textContent = '播放';
+    // 加载字幕（带错误处理）
+    // try {
+    //   const physicalPath = filePath.replace(/^file:\/\//, '');
+    //   SubtitleManager.loadSubtitles(physicalPath); // 这里添加关键调用
+    //   console.log('字幕加载成功');
+    // } catch (error) {
+    //   console.error('字幕加载失败:', error);
+    // }
   }
 });
 
