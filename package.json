@@ -1,0 +1,17 @@
+{
+  "name": "listening_video_player",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "NODE_ENV=development electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["video", "player", "listening", "language", "learning", "electron"],
+  "author": "",
+  "license": "ISC",
+  "description": "一个专注于听力练习的视频播放器应用",
+  "dependencies": {
+    "electron": "^28.1.0"
+  }
+}
